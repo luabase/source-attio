@@ -1,0 +1,21 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  env:
+    - 'DOCKER_BUILDKIT=1'
+  args: ['build','-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/source-attio/${_ENVIRONMENT}:$COMMIT_SHA', '.']
+  id: Build
+
+# Push the docker image to gcr
+- name: gcr.io/cloud-builders/docker
+  args:
+    - push
+    - 'us-central1-docker.pkg.dev/$PROJECT_ID/source-attio/${_ENVIRONMENT}'
+    - '--all-tags'
+  id: Push
+
+tags:
+  - source-attio
+  - ${_ENVIRONMENT}
+
+substitutions:
+  _ENVIRONMENT: prod
