@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "workspace_id": {
+        "type": "string"
+      },
+      "list_id": {
+        "type": "string"
+      },
+      "api_slug": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "parent_object": {
+        "type": "string"
+      },
+      "created_at": {
+        "type": "string"
+      }
+    }
+  }
+  
