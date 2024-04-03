@@ -411,6 +411,8 @@ class Entries(AttioStream):
             "workspace_id": {"type": "string"},
             "list_id": {"type": "string"},
             "entry_id": {"type": "string"},
+            "parent_record_id": {"type": "string"},
+            "parent_object": {"type": "string"},
         }
 
         for attr in attributes:
