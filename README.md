@@ -27,7 +27,7 @@ Credentials are managed via a JSON file.
 
 ```
 mkdir secrets
-cp .config.json.template secrets/config.json
+cp integration_tests/sample_config.json secrets/config.json
 ```
 
 And fill in in the required credentials.
@@ -45,7 +45,13 @@ python main.py discover --config secrets/config.json
 Perform extraction and pipe to a file:
 
 ```
-python main.py read --config secrets/config.json --catalog integration_tests/configured_catalog.json > extraction_output.json
+cp integration_tests/configured_catalog.json my_configured_catalog.json
+```
+
+Edit the configured catalog to match the streams discovered above.
+
+```
+python main.py read --config secrets/config.json --catalog my_configured_catalog.json > extraction_output.json
 ```
 
 ### Running in Meltano Locally
