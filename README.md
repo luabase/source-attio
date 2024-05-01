@@ -59,7 +59,7 @@ python main.py read --config secrets/config.json --catalog my_configured_catalog
 Build the Docker image:
 
 ```
-docker build -t luabase/source-notion .
+docker build -t luabase/source-attio .
 ```
 
 And then update `meltano.yaml` in the `meltano-extract` repo to point to the local image.
