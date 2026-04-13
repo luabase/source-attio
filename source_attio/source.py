@@ -547,6 +547,8 @@ class Records(AttioStream):
     standard (e.g. users, deals) or custom (e.g. projects, tasks, ...) objects enabled.
     """
 
+    primary_key = "record_id"
+
     offset = 0
 
     def __init__(self, object_slug: str, object_id: str, limit=DEFAULT_RECORDS_LIMIT, **kwargs):
