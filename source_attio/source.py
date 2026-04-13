@@ -44,6 +44,8 @@ class AttioStream(HttpStream, ABC):
 
 
 class WorkspaceMembers(AttioStream):
+    primary_key = "workspace_member_id"
+
     def path(self, **kwags) -> str:
         return "workspace_members"
 
@@ -67,6 +69,8 @@ class Lists(AttioStream):
     Not a dynamic stream like EntryAttributes and Entry; we have just one of these.
     """
 
+    primary_key = "list_id"
+
     def path(self, **kwags) -> str:
         return "lists"
 
@@ -88,6 +92,8 @@ class Objects(AttioStream):
     Not a dynamic stream like Attributes and Record; we have just one of these.
     """
 
+    primary_key = "object_id"
+
     def path(self, **kwags) -> str:
         return "objects"
 
@@ -107,6 +113,8 @@ class Attributes(AttioStream):
     Like the Record stream below, we generate one stream per object or list in the workspace, meaning we get
     a PeopleAttribute, a CompanyAttribute, and so on.
     """
+
+    primary_key = "attribute_id"
 
     offset = 0
 
@@ -214,6 +222,8 @@ class Entries(AttioStream):
     """
     This stream is responsible for handling entries for a given list in the workspace.
     """
+
+    primary_key = "entry_id"
 
     offset = 0
 
